@@ -48,7 +48,7 @@ function Home({ user }) {
 
     {/* part-3:body content */}
 
-    <h1>live:{events.length}</h1>
+    <h1>live:<div className="live_events">{events.length}</div></h1>
       <main>
 
       <button className="btn" onClick={handleClick}> Add Event +</button>
