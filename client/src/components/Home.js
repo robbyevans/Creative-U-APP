@@ -14,11 +14,20 @@ function Home({ user }) {
 
   const [events, setEvents] = useState([]);
   const[isTrue,setIsTrue]=useState(true)
+  const[book,setBook]=useState()
+  // const[books,setBooks]=useState()
+
 
   useEffect(() => {
     fetch("/events")
       .then((r) => r.json())
       .then(setEvents);
+  }, []);
+
+  useEffect(() => {
+    fetch("/tickets")
+      .then((r) => r.json())
+      .then(setBook);
   }, []);
 
   function handleAddSpice(addedSpice) {
@@ -38,14 +47,18 @@ function Home({ user }) {
       events.filter((spice) => spice.id !== deletedSpice.id)
     );
   }
+  // function handleAddTicket(addedTicket){
+  //   setBooks((books)=>[...books, addedTicket])
+  //   console.log(books)
+  // }
 
   function handleClick(){
     setIsTrue(!isTrue)
   }
   
   if (user) {
-    return <><h1>Welcome, {user.username}!</h1>
-
+    return <><h1>Welcome, <element className="live_events">{user.username}</element>!</h1>
+    {/* <h3>Booked tickets:{book}</h3> */}
     {/* part-3:body content */}
 
     <h1>live: <element className="live_events">{events.length}</element></h1>
@@ -61,6 +74,7 @@ function Home({ user }) {
               spice={spice}
               onUpdateSpice={handleUpdateSpice}
               onDeleteSpice={handleDeleteSpice}
+              // onAddTicket={handleAddTicket}
             />
           ))}
         </section>
@@ -69,7 +83,9 @@ function Home({ user }) {
 
     </>;
   } else {
-    return <h1>Please Login or Sign Up</h1>;
+    return <div class="body_msg">
+      <h1>Please Login or Sign Up</h1>
+    </div>;
   }
 }
 

@@ -1,7 +1,11 @@
+import { useState } from "react";
 import StarRating from "./StarRating";
 
-function SpiceItem({ spice, onUpdateSpice, onDeleteSpice }) {
+function SpiceItem({ spice, onUpdateSpice, onDeleteSpice  }) {
   const { id, image, title, description, location, rating } = spice;
+  const[book, setBook]=useState();
+  
+ 
 
   function handleUpdateRating(pct) {
     const newRating = pct * 5;
@@ -17,13 +21,14 @@ function SpiceItem({ spice, onUpdateSpice, onDeleteSpice }) {
   }
 
   function handleBook() {
-    fetch(`/event/${id}`, {
+    fetch(`/tickets`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({}),
-    }).then((r)=>r.json)
+      body: JSON.stringify({event_id:id}),
+    }).then((r)=>r.json())
+    .then(console.log)
   }
 
   function handleDeleteEvent() {
@@ -50,8 +55,8 @@ function SpiceItem({ spice, onUpdateSpice, onDeleteSpice }) {
           <StarRating percentage={rating / 5} onClick={handleUpdateRating} />
         </div>
         <p>
-        <button onClick={handleBook}>GRAB TICKET</button>
-          <button onClick={handleDeleteEvent}>Delete Event</button>
+        <button className="btn" onClick={handleBook}>BOOK TICKET</button>
+          <button className="btn" onClick={handleDeleteEvent}>Delete Event</button>
         </p>
       </div>
     </div>
