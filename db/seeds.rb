@@ -7,7 +7,37 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-puts "🌱 Seeding events..."
+puts "🙄 Seeding events..."
+
+Event.create(
+  title: "Epic Tennis Competition",
+  image: "https://dorset-tennis.org.uk/wpdlta/wp-content/uploads/2021/12/demo-blog-image.jpg",
+  description: "Battle of titans..going down this thursday..",
+  location: "Ngong Rescourse",
+  rating: 4.5
+)
+Event.create(
+  title: "Beer drinking competition",
+  image: "https://www.japan-guide.com/g20/2037_beer_01.jpg",
+  description: "Gazlas..Epic battle of men going down at Club Bristol this weekend",
+  location: "Bristol 411",
+  rating: 4.0
+)
+Event.create(
+  title: "Road trip to Mau ranges",
+  image: "https://lukesautoserviceverona.com/wp-content/uploads/2022/05/Depositphotos_71126621_l-2015.jpeg",
+  description: "Bring out your 4x4",
+  location: "Mau ranges",
+  rating: 3.5
+)
+Event.create(
+  title: "camping",
+  image: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/camping-ideas-1561136670.jpg",
+  description: "Grab your bag and join us on an epic 3 day camping trail to Mount Kilimanjaro",
+  location: "Mt.Kilimanjaro TZ",
+  rating: 4.5
+)
+puts "good to go..🐱🏇🌴🏖️😉"
 
 # Spice Data from spicejungle.com
-puts "✅ Done seeding!"
+
