@@ -9,6 +9,7 @@ import Header from "./Header";
 function App() {
   const [user, setUser] = useState(null);
 
+
   useEffect(() => {
     // auto-login
     fetch("/me").then((r) => {
@@ -16,7 +17,7 @@ function App() {
         r.json().then((user) => setUser(user));
       }
     });
-  }, []);
+  },[]);
 
   return (
     <>
@@ -41,7 +42,10 @@ function App() {
               <SignUp setUser={setUser} />
             </Route>
             <Route path="/login">
-              <Login setUser={setUser} />
+            {/* { msg ?(
+              <h4></h4>
+            ):(<h2>Invalid username or password</h2>)} */}
+              <Login  setUser={setUser} />
             </Route>
             <Route path="/">
               <Home />

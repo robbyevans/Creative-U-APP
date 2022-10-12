@@ -51,7 +51,7 @@ function SpiceItem({ spice, onUpdateSpice, onDeleteSpice  }) {
           Location: <em>{location}</em>
         </p>
         <div>
-          Stars:{" "}
+          Reviews:{" "}
           <StarRating percentage={rating / 5} onClick={handleUpdateRating} />
         </div>
         <p>

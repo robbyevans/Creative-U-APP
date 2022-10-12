@@ -3,6 +3,7 @@ import React, { useState } from "react";
 function SignUp({ setUser }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [msg,setMsg] = useState();
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
 
   function handleSubmit(e) {
@@ -20,13 +21,16 @@ function SignUp({ setUser }) {
     }).then((r) => {
       if (r.ok) {
         r.json().then((user) => setUser(user));
-      }
+      }else
+      // r.json().then(console.log)
+      r.json().then((msg) => setMsg(msg))
     });
   }
+  console.log(msg)
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <div className="signup_container">
+      <form className="form_signup" onSubmit={handleSubmit}>
         <h1>Sign Up</h1>
         <label htmlFor="username">Username</label>
         <input
@@ -52,6 +56,7 @@ function SignUp({ setUser }) {
           onChange={(e) => setPasswordConfirmation(e.target.value)}
           autoComplete="current-password"
         />
+        {/* {msg ?(<h4>'#{msg[0]}'</h4>):(null)} */}
         <button type="submit">Sign Up</button>
       </form>
     </div>
