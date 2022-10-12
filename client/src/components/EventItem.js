@@ -1,8 +1,8 @@
 import { useState } from "react";
 import StarRating from "./StarRating";
 
-function SpiceItem({ spice, onUpdateSpice, onDeleteSpice  }) {
-  const { id, image, title, description, location, rating } = spice;
+function EventItem({ spice, onUpdateSpice, onDeleteSpice  }) {
+  const { id, image, title, description, location,date, rating } = spice;
   const[book, setBook]=useState();
   
  
@@ -50,6 +50,9 @@ function SpiceItem({ spice, onUpdateSpice, onDeleteSpice  }) {
         <p>
           Location: <em>{location}</em>
         </p>
+        <p>
+          Date: <em>{date}</em>
+        </p>
         <div>
           Reviews:{" "}
           <StarRating percentage={rating / 5} onClick={handleUpdateRating} />
@@ -63,4 +66,4 @@ function SpiceItem({ spice, onUpdateSpice, onDeleteSpice  }) {
   );
 }
 
-export default SpiceItem;
+export default EventItem;

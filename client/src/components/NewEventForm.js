@@ -5,7 +5,8 @@ const initialState = {
   image: "",
   location: "",
   description: "",
-  rating: "",
+  date: "",
+  rating: ""
 };
 
 function NewSpiceForm({ onAddSpice }) {
@@ -35,9 +36,9 @@ function NewSpiceForm({ onAddSpice }) {
   }
 
   return (
-    <div className="card">
+    <div className="card ">
       <h2>Add Event/Activity</h2>
-      <form onSubmit={handleSubmit}>
+      <form className="new_event" onSubmit={handleSubmit}>
         <label htmlFor="title">Title: </label>
         <input
           type="text"
@@ -65,6 +66,15 @@ function NewSpiceForm({ onAddSpice }) {
           value={formData.image}
           onChange={handleChange}
         />
+
+        <label htmlFor="date">date: </label>
+        <input
+          type="date"
+          id="date"
+          value={formData.date}
+          onChange={handleChange}
+        />
+
         <label htmlFor="rating">Rating: </label>
         <input
           type="number"

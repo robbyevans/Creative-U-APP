@@ -22,14 +22,22 @@ function SignUp({ setUser }) {
       if (r.ok) {
         r.json().then((user) => setUser(user));
       }else
+      setMsg("*Password should be identical and username unique")
       // r.json().then(console.log)
-      r.json().then((msg) => setMsg(msg))
+      // r.json().then((msg) => setMsg(msg))
+
     });
   }
-  console.log(msg)
+  // function decode(array){
+  //   for (item of array){
+  //     console.log(array[0])
+  //   }
 
+  // }
+    
+    
   return (
-    <div className="signup_container">
+    <div className="form_container">
       <form className="form_signup" onSubmit={handleSubmit}>
         <h1>Sign Up</h1>
         <label htmlFor="username">Username</label>
@@ -56,8 +64,10 @@ function SignUp({ setUser }) {
           onChange={(e) => setPasswordConfirmation(e.target.value)}
           autoComplete="current-password"
         />
-        {/* {msg ?(<h4>'#{msg[0]}'</h4>):(null)} */}
-        <button type="submit">Sign Up</button>
+        {msg?(<div className="error-msg">
+          <h5 className="error-text">* Password should be idenical and username unique!.</h5>
+        </div>):(null)}
+        <button className="s-btn" type="submit">Sign Up</button>
       </form>
     </div>
   );

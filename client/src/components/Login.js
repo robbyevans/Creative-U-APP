@@ -24,29 +24,33 @@ function Login({ setUser }) {
   }
 
   return (
-    <div className="login_container " >
+    <div className="form_container " >
       <form className="form_login" onSubmit={handleSubmit}>
         <h1>Login</h1>
-        <label htmlFor="username">Username</label>
+        {/* <label htmlFor="username">Username</label> */}
         <input
           type="text"
           id="username"
           autoComplete="off"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
+          placeholder="Username"
         />
-        <label htmlFor="password">Password</label>
+        {/* <label htmlFor="password">Password</label> */}
         <input
           type="password"
           id="password"
           autoComplete="current-password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          placeholder="Password"
         />
         {msg?(<div className="error-msg">
-          <h4>Invalid username or password!</h4>
-        </div>):(null)}
-        <button type="submit">Login</button>
+          <h5 className="error-text">Invalid username or password!!.</h5>
+        </div>
+          // <h6><a href="">forgot password</a></h6>
+        ):(null)}
+        <button className="s-btn" type="submit">Login</button>
       </form>
     </div>
   );

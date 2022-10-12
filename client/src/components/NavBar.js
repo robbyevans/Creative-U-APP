@@ -14,15 +14,15 @@ function NavBar({ user, setUser }) {
     <header>
       <div class="nav_bar">
         {/* <div> */}
-          <Link className="link" to="/">Home</Link>
+          <Link className="link action-btn" to="/">Home</Link>
         {/* </div> */}
         {/* <div> */}
           {user ? (
-            <button onClick={handleLogoutClick}>Logout</button>
+            <button className=" link action-btn" onClick={handleLogoutClick}>Logout</button>
           ) : (
             <>
-              <Link className="link" to="/signup">Signup</Link>
-              <Link className="link" to="/login">Login</Link>
+              <Link className="link action-btn" to="/signup">Signup</Link>
+              <Link className="link action-btn" to="/login">Login</Link>
             </>
           )}
         {/* </div> */}

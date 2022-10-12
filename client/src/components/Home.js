@@ -64,7 +64,8 @@ function Home({ user }) {
     <h1>live: <element className="live_events">{events.length}</element></h1>
       <main>
 
-      <button className="btn" onClick={handleClick}> Add Event +</button>
+      <button className="btn add_btn" onClick={handleClick}> Add Event +</button>
+      
       {isTrue ? <div className="sidebar"><NewEventForm onAddSpice={handleAddSpice} /></div> : null} 
       <div><h1>Available events</h1></div>  
         <section className="spice-list">
