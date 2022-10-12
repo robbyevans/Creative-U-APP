@@ -2,8 +2,9 @@ import { useState } from "react";
 import StarRating from "./StarRating";
 
 function EventItem({ spice, onUpdateSpice, onDeleteSpice  }) {
-  const { id, image, title, description, location,date, rating } = spice;
+  const { id, image, title, description, location, date, rating } = spice;
   const[book, setBook]=useState();
+  const[isRead,setIsRead]=useState("true")
   
  
 
@@ -21,6 +22,7 @@ function EventItem({ spice, onUpdateSpice, onDeleteSpice  }) {
   }
 
   function handleBook() {
+    setIsRead(!isRead)
     fetch(`/tickets`, {
       method: "POST",
       headers: {
@@ -31,8 +33,9 @@ function EventItem({ spice, onUpdateSpice, onDeleteSpice  }) {
     .then(console.log)
   }
 
+
   function handleDeleteEvent() {
-    fetch(`/event/${id}`, {
+    fetch(`/events/${id}`, {
       method: "DELETE",
     }).then((r) => {
       if (r.ok) {
@@ -50,15 +53,15 @@ function EventItem({ spice, onUpdateSpice, onDeleteSpice  }) {
         <p>
           Location: <em>{location}</em>
         </p>
-        <p>
+        {/* <p>
           Date: <em>{date}</em>
-        </p>
+        </p> */}
         <div>
           Reviews:{" "}
           <StarRating percentage={rating / 5} onClick={handleUpdateRating} />
         </div>
         <p>
-        <button className="btn" onClick={handleBook}>BOOK TICKET</button>
+        <button className="btn" onClick={handleBook}>{isRead ?<h5>BOOKED</h5>:<h5>BOOK</h5>}</button>
           <button className="btn" onClick={handleDeleteEvent}>Delete Event</button>
         </p>
       </div>

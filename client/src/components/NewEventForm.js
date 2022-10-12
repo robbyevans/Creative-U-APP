@@ -27,6 +27,7 @@ function NewSpiceForm({ onAddSpice }) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(formData),
+      
     })
       .then((r) => r.json())
       .then((newEvent) => {
@@ -67,13 +68,13 @@ function NewSpiceForm({ onAddSpice }) {
           onChange={handleChange}
         />
 
-        <label htmlFor="date">date: </label>
+        {/* <label htmlFor="date">date: </label>
         <input
           type="date"
           id="date"
           value={formData.date}
           onChange={handleChange}
-        />
+        /> */}
 
         <label htmlFor="rating">Rating: </label>
         <input

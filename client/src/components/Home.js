@@ -25,7 +25,7 @@ function Home({ user }) {
   }, []);
 
   useEffect(() => {
-    fetch("/tickets")
+    fetch(`/tickets/`)
       .then((r) => r.json())
       .then(setBook);
   }, []);
@@ -58,14 +58,14 @@ function Home({ user }) {
   
   if (user) {
     return <><h1>Welcome, <element className="live_events">{user.username}</element>!</h1>
-    {/* <h3>Booked tickets:{book}</h3> */}
+    <h3>Booked tickets:{book}</h3>
     {/* part-3:body content */}
 
     <h1>live: <element className="live_events">{events.length}</element></h1>
       <main>
 
       <button className="btn add_btn" onClick={handleClick}> Add Event +</button>
-      
+
       {isTrue ? <div className="sidebar"><NewEventForm onAddSpice={handleAddSpice} /></div> : null} 
       <div><h1>Available events</h1></div>  
         <section className="spice-list">

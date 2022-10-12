@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :tickets,only:[:index,:create]
+  resources :tickets,only:[:index,:show,:create]
   resources :events
   # resources :users
   post"/login", to: "sessions#create"
