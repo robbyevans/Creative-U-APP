@@ -53,15 +53,15 @@ function EventItem({ spice, onUpdateSpice, onDeleteSpice  }) {
         <p>
           Location: <em>{location}</em>
         </p>
-        {/* <p>
+        <p>
           Date: <em>{date}</em>
-        </p> */}
+        </p>
         <div>
           Reviews:{" "}
           <StarRating percentage={rating / 5} onClick={handleUpdateRating} />
         </div>
         <p>
-        <button className="btn" onClick={handleBook}>{isRead ?<h5>BOOKED</h5>:<h5>BOOK</h5>}</button>
+        <button className="btn" onClick={handleBook}>{isRead ?<h6>BOOKED</h6>:<h6>BOOK</h6>}</button>
           <button className="btn" onClick={handleDeleteEvent}>Delete Event</button>
         </p>
       </div>

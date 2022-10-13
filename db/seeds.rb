@@ -14,7 +14,7 @@ Event.create(
   image: "https://dorset-tennis.org.uk/wpdlta/wp-content/uploads/2021/12/demo-blog-image.jpg",
   description: "Battle of titans..going down this thursday..",
   location: "Ngong Rescourse",
-  # date: "",
+  date: "2022-10-22",
   rating: 4.5
 )
 Event.create(
@@ -22,7 +22,7 @@ Event.create(
   image: "https://www.japan-guide.com/g20/2037_beer_01.jpg",
   description: "Gazlas..Epic battle of men going down at Club Bristol this weekend",
   location: "Bristol 411",
-  # date: "",
+  date: "2022-10-22",
   rating: 4.0
 )
 Event.create(
@@ -30,7 +30,7 @@ Event.create(
   image: "https://lukesautoserviceverona.com/wp-content/uploads/2022/05/Depositphotos_71126621_l-2015.jpeg",
   description: "Bring out your 4x4",
   location: "Mau ranges",
-  # date: "",
+  date: "2022-10-22",
   rating: 3.5
 )
 Event.create(
@@ -38,8 +38,17 @@ Event.create(
   image: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/camping-ideas-1561136670.jpg",
   description: "Grab your bag and join us on an epic 3 day camping trail to Mount Kilimanjaro",
   location: "Mt.Kilimanjaro TZ",
-  # date: "",
+  date: "2022-10-22",
   rating: 4.5
+)
+Event.create(
+  title: "Pool Party",
+  image: "https://dsgmedia.blob.core.windows.net/pub/2018/04/PoolPartyEssentials.jpg",
+  description: "we outside this saturday at TMT,stand a chance to win a water melon",
+  location: "Sarova ",
+  date: "2022-10-22",
+  rating: 4.5
+
 )
 puts "good to go..🐱🏇🌴🏖️😉"
 

@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2022_10_11_190924) do
     t.string "title"
     t.string "image"
     t.string "description"
+    t.date "date"
     t.string "location"
     t.float "rating"
     t.datetime "created_at", precision: 6, null: false
