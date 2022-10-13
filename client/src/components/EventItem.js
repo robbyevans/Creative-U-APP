@@ -61,7 +61,7 @@ function EventItem({ spice, onUpdateSpice, onDeleteSpice  }) {
           <StarRating percentage={rating / 5} onClick={handleUpdateRating} />
         </div>
         <p>
-        <button className="btn" onClick={handleBook}>{isRead ?<h6>BOOKED</h6>:<h6>BOOK</h6>}</button>
+        <button className="btn" onClick={handleBook}>{isRead ? "BOOKED":"BOOK"}</button>
           <button className="btn" onClick={handleDeleteEvent}>Delete Event</button>
         </p>
       </div>
