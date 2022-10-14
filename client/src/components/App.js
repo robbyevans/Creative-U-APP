@@ -5,9 +5,16 @@ import Login from "./Login";
 import NavBar from "./NavBar";
 import Home from "./Home";
 import Header from "./Header";
+import ImageSlider from "./ImageSlider";
+
+
+
+
+
 
 function App() {
   const [user, setUser] = useState(null);
+
 
 
   useEffect(() => {
@@ -19,6 +26,7 @@ function App() {
     });
   },[]);
 
+
   return (
     <>
 
@@ -28,8 +36,16 @@ function App() {
             <NavBar user={user} setUser={setUser} />
           </div>
         </div>
+        {/* //style container */}
+       
+
+        
+
+
 
       <main>
+
+        
         {user ? (
           <Switch>
             <Route path="/">
@@ -50,6 +66,7 @@ function App() {
             <Route path="/">
               <Home />
             </Route>
+  
           </Switch>
         )}
       </main>
